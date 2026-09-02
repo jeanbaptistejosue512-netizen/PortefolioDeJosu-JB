@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="CSS/style.css ">
 </head>
 
+
 <body>
 
 <!-- ================= CURSOR ================= -->
@@ -56,7 +57,8 @@
 
 
 <!-- ================= HERO ================= -->
-<section class="hero" id="accueil">
+<section class="hero" id="accueil"  data-slam="Bienvenue dans mon univers. Je suis Josué Jean-Baptiste, passionné par le numérique, la création et le développement web.">
+
 
     <div class="hero-bg-circle circle-one"></div>
     <div class="hero-bg-circle circle-two"></div>
@@ -114,7 +116,7 @@
 
    
         <div class="profile-circle">
-    <img src="Images/simon 3.png" alt="Photo de Josué Jean-Baptiste">
+    <img src="Images/JosueJB.png" alt="Photo de Josué Jean-Baptiste">
 </div>
 
         <div class="card-info">
@@ -179,7 +181,8 @@
 
 
 <!-- ================= ABOUT ================= -->
-<section class="section about" id="apropos">
+<section class="section about" id="apropos" data-slam="Derrière chaque projet se trouve une vision, une curiosité et une volonté constante de progresser.">
+>
 
     <div class="section-label">
         <span>01</span>
@@ -286,7 +289,8 @@
 
 
 <!-- ================= SKILLS ================= -->
-<section class="section skills-section" id="competences">
+<section class="section skills-section" id="competences"  data-slam="Chaque compétence est une nouvelle étape. Chaque ligne de code est une occasion de créer, d'apprendre et de repousser mes limites.">
+>
 
     <div class="section-label">
         <span>02</span>
@@ -424,7 +428,8 @@
 
 
 <!-- ================= PARCOURS ================= -->
-<section class="section parcours" id="parcours">
+<section class="section parcours" id="parcours"  data-slam="Mon parcours se construit entre formation, pratique et découverte. Une progression guidée par la curiosité et l'ambition.">
+>
 
     <div class="section-label">
         <span>03</span>
@@ -523,7 +528,8 @@
 
 
 <!-- ================= PROJECTS ================= -->
-<section class="section projects" id="projets">
+<section class="section projects" id="projets"  data-slam="Ici prennent vie mes idées. Des projets qui témoignent de mon apprentissage, de ma créativité et de ma passion pour le digital.">
+>
 
     <div class="section-label">
         <span>04</span>
@@ -655,7 +661,8 @@
 
 
 <!-- ================= SERVICES ================= -->
-<section class="section services">
+<section class="section services"  data-slam="Une idée, un projet ou une collaboration ? Chaque grande réalisation commence par une simple conversation.">
+>
 
     <div class="section-label">
         <span>05</span>
@@ -955,6 +962,20 @@
     </div>
 
 </footer>
+
+<!-- CONTRÔLE AUDIO -->
+<div class="audio-control">
+    <button id="audioBtn" aria-label="Activer le son">
+        <i class="fa-solid fa-volume-xmark"></i>
+    </button>
+
+    <span id="audioText">ACTIVER L'AMBIANCE</span>
+</div>
+
+<!-- MUSIQUE DE FOND -->
+<audio id="backgroundMusic" loop>
+    <source src="audio/1SPIRIT_AND_MIN_THEOPHILUS__SUNDAY__-_ADULLAM(360p).mp3" type="audio/mpeg">
+</audio>
 
 <script src="script.js"></script>
 </body>

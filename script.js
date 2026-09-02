@@ -136,3 +136,132 @@
         }, 60);
 
     });
+
+
+    const audioBtn = document.getElementById("audioBtn");
+const audioText = document.getElementById("audioText");
+const music = document.getElementById("backgroundMusic");
+
+let audioActive = false;
+let currentSection = null;
+
+// Volume mizik la
+music.volume = 0.12;
+
+
+// ===============================
+// BOUTON AUDIO
+// ===============================
+
+audioBtn.addEventListener("click", async () => {
+
+    if (!audioActive) {
+
+        try {
+
+            await music.play();
+
+            audioActive = true;
+
+            audioBtn.innerHTML =
+                '<i class="fa-solid fa-volume-high"></i>';
+
+            audioText.textContent = "AMBIANCE ACTIVE";
+
+            playSectionSlam();
+
+        } catch (error) {
+
+            console.log("Impossible de lancer la musique.");
+
+        }
+
+    } else {
+
+        music.pause();
+
+        audioActive = false;
+
+        speechSynthesis.cancel();
+
+        audioBtn.innerHTML =
+            '<i class="fa-solid fa-volume-xmark"></i>';
+
+        audioText.textContent = "ACTIVER L'AMBIANCE";
+    }
+});
+
+
+// ===============================
+// DETECTER LA SECTION VISIBLE
+// ===============================
+
+function playSectionSlam() {
+
+    if (!audioActive) return;
+
+    const sections =
+        document.querySelectorAll("[data-slam]");
+
+    let visibleSection = null;
+
+    sections.forEach(section => {
+
+        const rect =
+            section.getBoundingClientRect();
+
+        if (
+            rect.top < window.innerHeight * 0.55 &&
+            rect.bottom > window.innerHeight * 0.30
+        ) {
+
+            visibleSection = section;
+
+        }
+
+    });
+
+
+    // Si section lan chanje
+    if (
+        visibleSection &&
+        visibleSection !== currentSection
+    ) {
+
+        currentSection = visibleSection;
+
+        const text =
+            currentSection.dataset.slam;
+
+        // Arrêter ancien slam
+        speechSynthesis.cancel();
+
+
+        // Nouveau slam
+        const speech =
+            new SpeechSynthesisUtterance(text);
+
+        speech.lang = "fr-FR";
+
+        // Vwa pi dous/elegan
+        speech.rate = 0.88;
+        speech.pitch = 0.85;
+        speech.volume = 0.9;
+
+
+        speechSynthesis.speak(speech);
+    }
+}
+
+
+// ===============================
+// SCROLL
+// ===============================
+
+window.addEventListener("scroll", () => {
+
+    if (!audioActive) return;
+
+    playSectionSlam();
+
+});

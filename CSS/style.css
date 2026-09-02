@@ -714,7 +714,6 @@ textarea {
 
     white-space: nowrap;
 
-    transform: rotate(-1deg) scale(1.03);
 
     background: var(--black-2);
 }
@@ -1672,6 +1671,7 @@ textarea {
     flex-direction: column;
 
     gap: 10px;
+
 }
 
 .input-group label {
@@ -1702,7 +1702,7 @@ textarea {
 
     color: white;
 
-    resize: vertical;
+    resize: none;
 
     transition: .3s;
 }
@@ -2013,7 +2013,7 @@ footer {
 
         width: 280px;
 
-        height: 390px;
+    
     }
 
     .scroll-down {
@@ -2198,4 +2198,88 @@ footer {
         display: none;
     }
 
+}
+
+
+.audio-control {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 8px 15px 8px 8px;
+
+    background: rgba(8, 8, 8, 0.92);
+
+    border: 1px solid rgba(212, 175, 55, 0.4);
+
+    backdrop-filter: blur(15px);
+
+    border-radius: 50px;
+
+    box-shadow:
+        0 0 30px rgba(212, 175, 55, 0.08);
+}
+
+
+.audio-control button {
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    border: 1px solid #d4af37;
+
+    background: #d4af37;
+
+    color: #080808;
+
+    display: grid;
+    place-items: center;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.audio-control button:hover {
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+
+.audio-control span {
+
+    color: #aaa;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+}
+
+
+@media (max-width: 500px) {
+
+    .audio-control {
+
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .audio-control span {
+
+        display: none;
+    }
 }
