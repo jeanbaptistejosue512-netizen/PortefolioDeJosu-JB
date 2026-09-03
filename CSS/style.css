@@ -104,7 +104,7 @@ textarea {
 
     position: fixed;
 
-    top: 0;
+    top: -10px;
     left: 0;
 
     width: 100%;
@@ -912,6 +912,7 @@ textarea {
     background: var(--black-2);
 
     transform: translateY(-5px);
+    border: 1px solid var(--gold)
 }
 
 .about-card i {
