@@ -1859,7 +1859,16 @@ footer {
 
     transform: translateY(0);
 }
+/* =====================================================
+   RESPONSIVE LAPTOP
+===================================================== */
 
+@media (max-width: 1300px){
+
+  .marquee{
+        top: 73px;
+    }
+}
 
 /* =====================================================
    RESPONSIVE TABLET
@@ -1867,6 +1876,9 @@ footer {
 
 @media (max-width: 1000px) {
 
+     .marquee{
+        top: 70px;
+    }
     .header {
         padding: 0 5%;
     }
@@ -1923,6 +1935,15 @@ footer {
         grid-row: auto;
     }
 
+}
+/* ==============================
+RESPONSIVE DU MARQUEE
+=================================*/
+
+@media (max-width: 850px){
+    .marquee{
+        top: 60px;
+    }
 }
 
 
