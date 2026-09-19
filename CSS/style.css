@@ -913,7 +913,9 @@ textarea {
     background: var(--black-2);
 
     transform: translateY(-5px);
-    border: 1px solid var(--gold)
+    border: 1px solid var(--gold);
+    transform: scale(1.5);
+    transition: 0.5s;
 }
 
 .about-card i {
