@@ -704,7 +704,9 @@ textarea {
 
 .marquee {
 
-
+    position: sticky;
+    top: 75px;
+    z-index: 100;
     border-top: 1px solid #222;
 
     border-bottom: 1px solid #222;
@@ -1950,7 +1952,11 @@ footer {
         pointer-events: auto;
     }
 
+    /* Marquee */
 
+    .marquee {
+        top: 65px;
+    }
     /* HERO */
 
     .hero {
